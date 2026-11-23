@@ -1,0 +1,14 @@
+services:
+  dvwa:
+    image: vulnerables/web-dvwa
+    # On an Apple Silicon (M1/M2/M3) Mac, uncomment the next line:
+    # platform: linux/amd64
+    ports:
+      - "127.0.0.1:8080:80"      # only reachable from your own machine
+    restart: unless-stopped
+
+  juiceshop:
+    image: bkimminich/juice-shop
+    ports:
+      - "127.0.0.1:3000:3000"
+    restart: unless-stopped
